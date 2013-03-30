@@ -1,40 +1,137 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
+        <!--link rel="stylesheet" type="text/css" href="css/index.css" /-->
+        
+        <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/planet13.css" />
+        <script type="text/javascript" src="cordova-2.4.0.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.2.0.min.js"></script>
+        
+        <script type="text/javascript" src="js/feed.js"></script>
+        <script type="text/javascript" src="js/fotoupload.js"></script>
+        <script type="text/javascript" src="js/photo.js"></script>
+        
+    	<title>PLANET'13</title>
     </head>
     <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready">
-                <p class="status pending blink">Connecting to Device</p>
-                <p class="status complete blink hide">Device is Ready</p>
+    
+    	<div data-role="page" id="start">
+            <div data-theme="a" data-role="header">
+                <h2>PLANET'13</h2>
+            </div>
+            <div data-role="content">
+            	<h3>Willkommen in der PLANET'13 App!</h3>
+            </div>
+            
+        	<div data-role="footer" data-position="fixed">
+        		<div data-role="navbar">
+        			<ul>
+						<li><a href="#start" data-theme="a" data-icon="home"> Start </a></li>
+						<li><a href="#news-all" data-theme="a" data-icon="info"> News </a></li>
+						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
+						<li><a href="#page9" data-theme="a" data-icon="info"> # </a></li>
+						<li><a href="#page14" data-theme="a" data-icon="gear"> # </a></li>
+					</ul>
+				</div>
+        	</div>
+        </div>
+        
+        <div data-role="page" id="news-all">
+            <div data-theme="a" data-role="header">
+                <h3>PLANET'13</h3>
+            </div>
+            <div data-role="content">
+            	<ul data-role="listview" data-theme="d" id="articleList"></ul>
+            </div>
+            
+            <div data-role="footer" data-position="fixed">
+        		<div data-role="navbar">
+        			<ul>
+						<li><a href="#start" data-theme="a" data-icon="home"> Start </a></li>
+						<li><a href="#news-all" data-theme="a" data-icon="plus"> News </a></li>
+						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
+						<li><a href="#page9" data-theme="a" data-icon="info"> # </a></li>
+						<li><a href="#page14" data-theme="a" data-icon="gear"> # </a></li>
+					</ul>
+				</div>
+        	</div>
+        </div>
+        
+        <div data-role="page" id="photo">
+            <div data-theme="a" data-role="header">
+                <h3>Foto hochladen</h3>
+            </div>
+            <div data-role="content">
+            
+            	Hier kannst du dein Foto vom PLANET'13 hochladen!<br/>
+            	Here you can upload your photo from PLANET'13!
+            
+				<input type="text" name="name" id="name" placeholder="dein Name | your name" value="">
+				<input type="text" name="title" id="title" placeholder="Titel | title" value="">
+				<input type="text" name="description" id="description" placeholder="Beschreibung | description" value="">
+
+    			<label for="ok">
+    				Das PLANET'13 darf mein Foto verwenden.<br/>
+					PLANET'13 is allowed to use my photo.
+    			</label>
+    			<select name="ok" id="ok" data-role="slider" data-mini="true">
+    				<option value="no">O</option>
+					<option value="on" selected="">|</option>
+				</select>
+
+				<br/><br/>
+
+    			<label for="picturedb">
+    				Das Foto darf zum Zwecke der internen und externen Öffentlichkeitsarbeit der Pfadfinder und Pfadfinderinnen verwendet werden.<br/>
+					I agree that the photo may be used to promote Guiding/Scouting in the internal and external media.
+    			</label>
+    			<select name="picturedb" id="picturedb" data-role="slider" data-mini="true">
+    				<option value="no">O</option>
+					<option value="on" selected="">|</option>
+				</select>
+				
+				<!--
+            	<button onclick="capturePhoto();">Foto aufnehmen</button>
+   				<button onclick="capturePhotoEdit();">Foto aufnehmen und bearbeiten</button>
+   				-->
+   				<button onclick="capturePhotoEdit();">Foto aufnehmen</button>
+    			<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Aus den gespeicherten Fotos</button>
+    			<!--
+    			<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">Aus den Alben</button>
+    			-->
+    			
+    			<input id="upload" type="button" value="hochladen | upload" data-icon="check">
+            	
+            </div>
+            
+            <div data-role="footer" data-position="fixed">
+        		<div data-role="navbar">
+        			<ul>
+						<li><a href="#start" data-theme="a" data-icon="home"> Start </a></li>
+						<li><a href="#news-all" data-theme="a" data-icon="plus"> News </a></li>
+						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
+						<li><a href="#page9" data-theme="a" data-icon="info"> # </a></li>
+						<li><a href="#page14" data-theme="a" data-icon="gear"> # </a></li>
+					</ul>
+				</div>
+        	</div>
+        </div>
+        
+    	<div data-role="page" id="news-single">
+            <div data-theme="a" data-role="header">
+            	<a href="#news-all" data-icon="arrow-l">zurück</a>
+                <h3 id="newsheadline">PLANET'13</h3>
+            </div>
+            <div data-role="content" id="newscontent">
             </div>
         </div>
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+        
         <script type="text/javascript">
             app.initialize();
         </script>
