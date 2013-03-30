@@ -2,10 +2,8 @@
     var destinationType; // sets the format of returned value 
     var image;
 
-    // Wait for Cordova to connect with the device
     document.addEventListener("deviceready",onDeviceReady,false);
 
-    // Cordova is ready to be used!
     function onDeviceReady() {
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
@@ -15,21 +13,12 @@
 		image = imageURI;
     }
 
-    // A button will call this function
     function capturePhoto() {
       	// Take picture using device camera and retrieve image as base64-encoded string
       	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
         destinationType: destinationType.FILE_URI });
     }
 
-    // A button will call this function
-    function capturePhotoEdit() {
-      // Take picture using device camera, allow edit, and retrieve image as base64-encoded string  
-      navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 20, allowEdit: true,
-        destinationType: destinationType.FILE_URI });
-    }
-
-    // A button will call this function
     function getPhoto(source) {
       	// Retrieve image file location from specified source
       	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
@@ -37,7 +26,6 @@
         sourceType: source });
     }
 
-    // Called if something bad happens.
     function onFail(message) {
 		navigator.notification.alert("Fehler! Error!", null, "Error"); 
     }
@@ -67,36 +55,30 @@
         }
 
         if (dataOk){
-        
-       		var params = {};
+    
+			var options = new FileUploadOptions();
+				options.fileKey="Filedata";
+				options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+				options.mimeType="image/jpeg";
+				
+			var params = {};
 				params.name = name;
 				params.title = title;
         		params.description = description;
         		params.ok = ok;
         		params.picturedb = picturedb;
         		params.source = "app";
-    
-			var options = new FileUploadOptions();
-				options.fileKey="Filedata";
-				options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
-				options.mimeType="image/jpeg";
 
-			var params = {};
-				params.name = $("#name").val();
-				params.title = $("#title").val();
-        		params.description = $("#description").val();
-        		params.ok = $("#ok").val();
-        		params.source = "app";
         	options.params = params;
 
 	        var ft = new FileTransfer();
-    	    ft.upload(imageURI, encodeURI("http://fotoupload.planet13.at"), win, fail, options);
+    	    ft.upload(imageURI, encodeURI("http://fotoupload.planet13.at"), success, fail, options);
     	    
     	}
     	    
     }
 
-	function win(r) {
+	function success(r) {
 		navigator.notification.alert("Erfolgreich hochgeladen! Successfully uploaded!", null, "Yeah!"); 
 		console.log("Code = " + r.responseCode);
 		console.log("Response = " + r.response);
