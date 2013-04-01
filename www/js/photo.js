@@ -60,6 +60,7 @@
 			var options = new FileUploadOptions();
 				options.fileKey="Filedata";
 				options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+				console.log(options.fileName);
 				options.mimeType="image/jpeg";
 				
 			var params = {};
