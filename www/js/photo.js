@@ -13,12 +13,11 @@
 		//img.style.display = 'block';
     	img.src = imageURI;
 		$("#showPhoto").fadeIn();
-		/*
-		$("#showPhoto").fadeIn();
+	/*
 		console.log($("#showPhoto"));
 		$("#showPhoto").attr("src") = imageURI;
 		console.log($("#showPhoto"));
-		
+	*/	
 		var maxwidth	 	= $(window).width();
 		var realwidth  	 	= $("#showPhoto").width();
         var realheight 	 	= $("#showPhoto").height();
@@ -26,7 +25,7 @@
 
     	$("#showPhoto").width(realwidth*factor);
         $("#showPhoto").height(realheight*factor);
-		*/
+
 		$("#submitButtons").fadeIn();
 		
     }
