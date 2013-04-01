@@ -10,8 +10,9 @@
 		image = imageURI;
 		
 		var img = document.getElementById('showPhoto');
-		img.style.display = 'block';
+		//img.style.display = 'block';
     	img.src = imageURI;
+		$("#showPhoto").fadeIn();
 		/*
 		$("#showPhoto").fadeIn();
 		console.log($("#showPhoto"));
@@ -122,4 +123,5 @@
 	
 $(document).ready(function() {
 	$("#submitButtons").hide();
+	$("#showPhoto").hide();
 })
