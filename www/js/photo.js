@@ -14,7 +14,11 @@
     	//img.src = imageURI;
 		//$("#showPhoto").fadeIn();
 		
-		$('<img src="'+ imageURI +'">').load(function() {
+		$('<img id="largePhoto" src="'+ imageURI +'">').load(function() {
+		
+			$(this).appendTo('#photoHere');
+			/*
+			$(this).appendTo('#photoHere');
 			
 			var maxwidth	 	= $(window).width();
 			var realwidth  	 	= $(this).width();
@@ -23,9 +27,12 @@
 		
 			$(this).width(realwidth*factor);
         	$(this).height(realheight*factor);
-		
-  			$(this).appendTo('#photoHere');
+        	*/
+  			
 		})
+		
+		console.log("SIZE SIZE SIZE: "+$("#showPhoto").width());
+		
 	/*
 		console.log($("#showPhoto"));
 		$("#showPhoto").attr("src") = imageURI;
