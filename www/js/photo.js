@@ -9,10 +9,23 @@
     function onPhotoURISuccess(imageURI) {
 		image = imageURI;
 		
-		var img = document.getElementById('showPhoto');
-		img.style.display = 'block';
-    	img.src = imageURI;
+		//var img = document.getElementById('showPhoto');
+		//img.style.display = 'block';
+    	//img.src = imageURI;
 		//$("#showPhoto").fadeIn();
+		
+		$('<img src="'+ imageURI +'">').load(function() {
+			
+			var maxwidth	 	= $(window).width();
+			var realwidth  	 	= $(this).width();
+            var realheight 	 	= $(this).height();
+            var factor  		= maxwidth/realwidth;
+		
+			$(this).width(realwidth*factor);
+        	$(this).height(realheight*factor);
+		
+  			$(this).appendTo('#photoHere');
+		})
 	/*
 		console.log($("#showPhoto"));
 		$("#showPhoto").attr("src") = imageURI;
