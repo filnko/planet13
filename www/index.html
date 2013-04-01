@@ -97,13 +97,10 @@
 					<option value="on" selected="">|</option>
 				</select>
 
-   				<button onclick="capturePhoto();">Foto aufnehmen</button>
-    			<button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">Aus den gespeicherten Fotos</button>
-    			<!--
-    			<button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">Aus den Alben</button>
-    			-->
+   				<button id="capturePhoto" onclick="capturePhoto();">Foto aufnehmen</button>
+    			<button id="getPhoto" onclick="getPhoto();">Aus den gespeicherten Fotos</button>
     			
-    			<input id="upload" type="button" value="hochladen | upload" data-icon="check">
+    			<button id="uploadPhoto" onclick="uploadPhoto();" data-icon="check">hochladen | upload</button>
             	
             </div>
             

@@ -1,30 +1,30 @@
-	var pictureSource;   // picture source
-    var destinationType; // sets the format of returned value 
+
     var image;
 
     document.addEventListener("deviceready",onDeviceReady,false);
 
     function onDeviceReady() {
-        pictureSource=navigator.camera.PictureSourceType;
-        destinationType=navigator.camera.DestinationType;
+		$("#uploadPhoto").hide();
     }
     
     function onPhotoURISuccess(imageURI) {
 		image = imageURI;
-		console.log("imageURI = " + imageURI);
+		$("#uploadPhoto").fadeIn();
     }
 
     function capturePhoto() {
-      	// Take picture using device camera and retrieve image as base64-encoded string
-      	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50,
-        destinationType: destinationType.FILE_URI });
+      	// Take picture using device camera 
+      	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,
+        destinationType: destinationType.FILE_URI,
+        correctOrientation: true });
     }
 
-    function getPhoto(source) {
-      	// Retrieve image file location from specified source
-      	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 50, 
+    function getPhoto() {
+      	// Retrieve image file location from photo library
+      	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80, 
         destinationType: destinationType.FILE_URI,
-        sourceType: source });
+        correctOrientation: true,
+        sourceType: pictureSource.PHOTOLIBRARY });
     }
 
     function onFail(message) {
@@ -57,18 +57,9 @@
 
         if (dataOk){
         
-        	// check if fileending is there
-        	// android: fileending is missing when uploading from gallery
-        	var fileName = imageURI.substr(imageURI.lastIndexOf('/')+1);
-        	if (fileName.indexOf(".") == -1){
-        		fileName += ".jpeg";
-        	}
+			$("#uploadPhoto").fadeOut();
     
 			var options = new FileUploadOptions();
-				options.fileKey="Filedata";
-				options.fileName=fileName;
-				console.log(options.fileName);
-				options.mimeType="image/jpeg";
 				
 			var params = {};
 				params.name = name;
@@ -92,6 +83,11 @@
 		console.log("Code = " + response.responseCode);
 		console.log("Response = " + response.response);
 		console.log("Sent = " + response.bytesSent);
+		
+		$("#uploadPhoto").fadeIn();
+		$("#getPhoto").fadeIn();
+		$("#capturePhoto").fadeIn();
+		
 	}
 
 	function fail(response) {
@@ -99,10 +95,8 @@
 		console.log("Code = " + response.responseCode);
 		console.log("upload error source " + response.source);
 		console.log("upload error target " + response.target);
+		
+		$("#uploadPhoto").fadeIn();
+		$("#getPhoto").fadeIn();
+		$("#capturePhoto").fadeIn();
 	}
-    
-$(document).ready(function() {
-	$("#upload").click(function() {
-		uploadPhoto(image);
-	});
-})
