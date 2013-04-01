@@ -22,6 +22,11 @@
 		var realwidth  	 	= $("#showPhoto").width();
         var realheight 	 	= $("#showPhoto").height();
         var factor  		= maxwidth/realwidth;
+        
+        console.log("maxwidth: "+maxwidth);
+        console.log("realwidth: "+realwidth);
+        console.log("realheight: "+realheight);
+        console.log("factor: "+factor);
 
     	$("#showPhoto").width(realwidth*factor);
         $("#showPhoto").height(realheight*factor);
