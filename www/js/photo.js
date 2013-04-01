@@ -56,10 +56,17 @@
         }
 
         if (dataOk){
+        
+        	// check if fileending is there
+        	// android: fileending is missing when uploading from gallery
+        	fileName = imageURI.substr(imageURI.lastIndexOf('/')+1;
+        	if (fileName.indexOf(".") == -1){
+        		fileName += ".jpeg";
+        	}
     
 			var options = new FileUploadOptions();
 				options.fileKey="Filedata";
-				options.fileName=imageURI.substr(imageURI.lastIndexOf('/')+1);
+				options.fileName=fileName;
 				console.log(options.fileName);
 				options.mimeType="image/jpeg";
 				
