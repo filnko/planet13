@@ -8,7 +8,20 @@
     
     function onPhotoURISuccess(imageURI) {
 		image = imageURI;
-		$("#submit").fadeIn();
+		
+		$("#showPhoto").attr("src") = imageURI;
+		
+		var maxwidth	 	= $(window).width();
+		var realwidth  	 	= $("#showPhoto").width();
+        var realheight 	 	= $("#showPhoto").height();
+        var factor  		= maxwidth/realwidth;
+
+    	$("#showPhoto").width(realwidth*factor);
+        $("#showPhoto").height(realheight*factor);
+		
+		$("#showPhoto").fadeIn();
+		$("#submitButtons").fadeIn();
+		
     }
 
     function capturePhoto() {
@@ -27,7 +40,7 @@
     }
 
     function onFail(message) {
-		navigator.notification.alert("Fehler! Error!", null, "Error"); 
+		navigator.notification.alert("Kein Foto ausgewählt! No photo chosen!", null, "Error"); 
     }
     
     function uploadPhoto(imageURI) {
@@ -56,7 +69,8 @@
 
         if (dataOk){
         
-			$("#submit").fadeOut();
+			$("#submitButtons").fadeOut();
+			$("#photoButtons").fadeOut();
     
 			var options = new FileUploadOptions();
 				
@@ -83,9 +97,10 @@
 		console.log("Response = " + response.response);
 		console.log("Sent = " + response.bytesSent);
 		
-		$("#submit").fadeIn();
-		$("#getPhoto").fadeIn();
-		$("#capturePhoto").fadeIn();
+		$("#showPhoto").fadeOut();
+		image = "";
+		$("#submitButtons").fadeIn();
+		$("#photoButtons").fadeIn();
 		
 	}
 
@@ -95,11 +110,11 @@
 		console.log("upload error source " + response.source);
 		console.log("upload error target " + response.target);
 		
-		$("#submit").fadeIn();
-		$("#getPhoto").fadeIn();
-		$("#capturePhoto").fadeIn();
+		$("#submitButtons").fadeIn();
+		$("#photoButtons").fadeIn();
 	}
 	
 $(document).ready(function() {
-	$("#submit").hide();
+	$("#submitButtons").hide();
+	$("#showPhoto").hide();
 })
