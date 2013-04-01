@@ -10,14 +10,14 @@
 		image = imageURI;
 		
 		var img = document.getElementById('showPhoto');
-		//img.style.display = 'block';
+		img.style.display = 'block';
     	img.src = imageURI;
-		$("#showPhoto").fadeIn();
+		//$("#showPhoto").fadeIn();
 	/*
 		console.log($("#showPhoto"));
 		$("#showPhoto").attr("src") = imageURI;
 		console.log($("#showPhoto"));
-	*/	
+		
 		var maxwidth	 	= $(window).width();
 		var realwidth  	 	= $("#showPhoto").width();
         var realheight 	 	= $("#showPhoto").height();
@@ -30,7 +30,7 @@
 
     	$("#showPhoto").width(realwidth*factor);
         $("#showPhoto").height(realheight*factor);
-
+*/
 		$("#submitButtons").fadeIn();
 		
     }
@@ -127,5 +127,5 @@
 	
 $(document).ready(function() {
 	$("#submitButtons").hide();
-	$("#showPhoto").hide();
+	//$("#showPhoto").hide();
 })
