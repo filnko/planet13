@@ -33,12 +33,12 @@
     
     function uploadPhoto(imageURI) {
         	
-        dataOk 		= true;
-        name 		= $("#name").val();
-		title 		= $("#title").val();
-        description = $("#description").val();
-        ok 			= $("#ok").val();
-        picturedb	= $("#picturedb").val();
+        var dataOk 		= true;
+        var name 		= $("#name").val();
+		var title 		= $("#title").val();
+        var description = $("#description").val();
+        var ok 			= $("#ok").val();
+        var picturedb	= $("#picturedb").val();
 
         if (name.length<2){
         	dataOk = false;
@@ -59,7 +59,7 @@
         
         	// check if fileending is there
         	// android: fileending is missing when uploading from gallery
-        	fileName = imageURI.substr(imageURI.lastIndexOf('/')+1;
+        	var fileName = imageURI.substr(imageURI.lastIndexOf('/')+1;
         	if (fileName.indexOf(".") == -1){
         		fileName += ".jpeg";
         	}
