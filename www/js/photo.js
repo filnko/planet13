@@ -8,7 +8,7 @@
     
     function onPhotoURISuccess(imageURI) {
 		image = imageURI;
-		$("#uploadPhoto").fadeIn();
+		$("#submit").fadeIn();
     }
 
     function capturePhoto() {
@@ -56,7 +56,7 @@
 
         if (dataOk){
         
-			$("#uploadPhoto").fadeOut();
+			$("#submit").fadeOut();
     
 			var options = new FileUploadOptions();
 				
@@ -83,7 +83,7 @@
 		console.log("Response = " + response.response);
 		console.log("Sent = " + response.bytesSent);
 		
-		$("#uploadPhoto").fadeIn();
+		$("#submit").fadeIn();
 		$("#getPhoto").fadeIn();
 		$("#capturePhoto").fadeIn();
 		
@@ -95,11 +95,11 @@
 		console.log("upload error source " + response.source);
 		console.log("upload error target " + response.target);
 		
-		$("#uploadPhoto").fadeIn();
+		$("#submit").fadeIn();
 		$("#getPhoto").fadeIn();
 		$("#capturePhoto").fadeIn();
 	}
 	
 $(document).ready(function() {
-	$("#uploadPhoto").hide();
+	$("#submit").hide();
 })
