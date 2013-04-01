@@ -11,6 +11,7 @@
     
     function onPhotoURISuccess(imageURI) {
 		image = imageURI;
+		console.log("imageURI = " + imageURI);
     }
 
     function capturePhoto() {
@@ -78,18 +79,18 @@
     	    
     }
 
-	function success(r) {
+	function success(response) {
 		navigator.notification.alert("Erfolgreich hochgeladen! Successfully uploaded!", null, "Yeah!"); 
-		console.log("Code = " + r.responseCode);
-		console.log("Response = " + r.response);
-		console.log("Sent = " + r.bytesSent);
+		console.log("Code = " + response.responseCode);
+		console.log("Response = " + response.response);
+		console.log("Sent = " + response.bytesSent);
 	}
 
-	function fail(error) {
+	function fail(response) {
 		navigator.notification.alert("Fehler beim Hochladen! Error during upload!", null, "Error"); 
-		console.log("Code = " + r.responseCode);
-		console.log("upload error source " + error.source);
-		console.log("upload error target " + error.target);
+		console.log("Code = " + response.responseCode);
+		console.log("upload error source " + response.source);
+		console.log("upload error target " + response.target);
 	}
     
 $(document).ready(function() {
