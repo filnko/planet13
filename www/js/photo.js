@@ -9,10 +9,9 @@
     function onPhotoURISuccess(imageURI) {
 		image = imageURI;
 
-		var imgWidth = $(window).width()-50;
+		var imgWidth = $(window).width()-30;
 
 		$("#showPhoto").attr("src", imageURI);
-		$("#showPhoto").attr("style", "margin: 0 auto;");
     	$("#showPhoto").width(imgWidth);
     	$("#showPhoto").fadeIn();
 
@@ -47,6 +46,8 @@
         var description = $("#description").val();
         var ok 			= $("#ok").val();
         var picturedb	= $("#picturedb").val();
+        
+		$("#submitButtons").fadeOut();
 
         if (name.length<2){
         	dataOk = false;
@@ -95,7 +96,6 @@
 		
 		$("#showPhoto").fadeOut();
 		image = "";
-		$("#submitButtons").fadeIn();
 		$("#photoButtons").fadeIn();
 		
 	}
@@ -112,5 +112,4 @@
 	
 $(document).ready(function() {
 	$("#submitButtons").hide();
-	//$("#showPhoto").hide();
 })
