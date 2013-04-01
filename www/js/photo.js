@@ -13,47 +13,19 @@
 		//img.style.display = 'block';
     	//img.src = imageURI;
 		//$("#showPhoto").fadeIn();
-		
+		/*
 		$('<img id="largePhoto" src="'+ imageURI +'">').load(function() {
 		
-			$(this).width($(window).width());
-			$(this).appendTo('#photoHere');
-			/*
 			$(this).appendTo('#photoHere');
 			
-			var maxwidth	 	= $(window).width();
-			var realwidth  	 	= $(this).width();
-            var realheight 	 	= $(this).height();
-            var factor  		= maxwidth/realwidth;
-		
-			$(this).width(realwidth*factor);
-        	$(this).height(realheight*factor);
-        	*/
   			$(this).width($(window).width());
-  			console.log($(window).width());
 		})
-		
-		console.log("SIZE SIZE SIZE: "+$("#largePhoto").width());
-		console.log("SIZE SIZE SIZE: "+$("#largePhoto").height());
-		
-	/*
-		console.log($("#showPhoto"));
-		$("#showPhoto").attr("src") = imageURI;
-		console.log($("#showPhoto"));
-		
-		var maxwidth	 	= $(window).width();
-		var realwidth  	 	= $("#showPhoto").width();
-        var realheight 	 	= $("#showPhoto").height();
-        var factor  		= maxwidth/realwidth;
-        
-        console.log("maxwidth: "+maxwidth);
-        console.log("realwidth: "+realwidth);
-        console.log("realheight: "+realheight);
-        console.log("factor: "+factor);
+		*/
 
-    	$("#showPhoto").width(realwidth*factor);
-        $("#showPhoto").height(realheight*factor);
-*/
+		$("#showPhoto").attr("src") = imageURI;
+    	$("#showPhoto").width($(window).width());
+    	$("#showPhoto").fadeIn();
+
 		$("#submitButtons").fadeIn();
 		
     }
