@@ -9,7 +9,10 @@
     function onPhotoURISuccess(imageURI) {
 		image = imageURI;
 		
+		$("#showPhoto").fadeIn();
+		console.log($("#showPhoto"));
 		$("#showPhoto").attr("src") = imageURI;
+		console.log($("#showPhoto"));
 		
 		var maxwidth	 	= $(window).width();
 		var realwidth  	 	= $("#showPhoto").width();
@@ -19,7 +22,6 @@
     	$("#showPhoto").width(realwidth*factor);
         $("#showPhoto").height(realheight*factor);
 		
-		$("#showPhoto").fadeIn();
 		$("#submitButtons").fadeIn();
 		
     }
@@ -116,5 +118,4 @@
 	
 $(document).ready(function() {
 	$("#submitButtons").hide();
-	$("#showPhoto").hide();
 })
