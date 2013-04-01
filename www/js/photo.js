@@ -31,7 +31,8 @@
   			
 		})
 		
-		console.log("SIZE SIZE SIZE: "+$("#showPhoto").width());
+		console.log("SIZE SIZE SIZE: "+$("#largePhoto").width());
+		console.log("SIZE SIZE SIZE: "+$("#largePhoto").height());
 		
 	/*
 		console.log($("#showPhoto"));
