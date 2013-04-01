@@ -22,7 +22,7 @@
 		})
 		*/
 
-		$("#showPhoto").attr("src") = imageURI;
+		$("#showPhoto").attr("src", imageURI);
     	$("#showPhoto").width($(window).width());
     	$("#showPhoto").fadeIn();
 
