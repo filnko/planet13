@@ -16,7 +16,7 @@
 		
 		$('<img id="largePhoto" src="'+ imageURI +'">').load(function() {
 		
-			$(this).width($(window).width(););
+			$(this).width($(window).width());
 			$(this).appendTo('#photoHere');
 			/*
 			$(this).appendTo('#photoHere');
