@@ -15,16 +15,16 @@
     function capturePhoto() {
       	// Take picture using device camera 
       	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,
-        destinationType: destinationType.FILE_URI,
+        destinationType: Camera.DestinationType.FILE_URI,
         correctOrientation: true });
     }
 
     function getPhoto() {
       	// Retrieve image file location from photo library
       	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80, 
-        destinationType: destinationType.FILE_URI,
+        destinationType: Camera.DestinationType.FILE_URI,
         correctOrientation: true,
-        sourceType: pictureSource.PHOTOLIBRARY });
+        sourceType: Camera.PictureSourceType.PHOTOLIBRARY });
     }
 
     function onFail(message) {
