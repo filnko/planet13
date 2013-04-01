@@ -29,7 +29,7 @@
 			$(this).width(realwidth*factor);
         	$(this).height(realheight*factor);
         	*/
-  			$(this).width($(window).width(););
+  			$(this).width($(window).width());
   			console.log($(window).width());
 		})
 		
