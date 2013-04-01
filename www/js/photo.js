@@ -9,6 +9,10 @@
     function onPhotoURISuccess(imageURI) {
 		image = imageURI;
 		
+		var img = document.getElementById('showPhoto');
+		img.style.display = 'block';
+    	img.src = imageURI;
+		/*
 		$("#showPhoto").fadeIn();
 		console.log($("#showPhoto"));
 		$("#showPhoto").attr("src") = imageURI;
@@ -21,7 +25,7 @@
 
     	$("#showPhoto").width(realwidth*factor);
         $("#showPhoto").height(realheight*factor);
-		
+		*/
 		$("#submitButtons").fadeIn();
 		
     }
