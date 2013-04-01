@@ -8,22 +8,12 @@
     
     function onPhotoURISuccess(imageURI) {
 		image = imageURI;
-		
-		//var img = document.getElementById('showPhoto');
-		//img.style.display = 'block';
-    	//img.src = imageURI;
-		//$("#showPhoto").fadeIn();
-		/*
-		$('<img id="largePhoto" src="'+ imageURI +'">').load(function() {
-		
-			$(this).appendTo('#photoHere');
-			
-  			$(this).width($(window).width());
-		})
-		*/
+
+		var imgWidth = $(window).width()-50;
 
 		$("#showPhoto").attr("src", imageURI);
-    	$("#showPhoto").width($(window).width());
+		$("#showPhoto").attr("style", "margin: 0 auto;");
+    	$("#showPhoto").width(imgWidth);
     	$("#showPhoto").fadeIn();
 
 		$("#submitButtons").fadeIn();
