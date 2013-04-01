@@ -4,7 +4,6 @@
     document.addEventListener("deviceready",onDeviceReady,false);
 
     function onDeviceReady() {
-		$("#uploadPhoto").hide();
     }
     
     function onPhotoURISuccess(imageURI) {
@@ -100,3 +99,7 @@
 		$("#getPhoto").fadeIn();
 		$("#capturePhoto").fadeIn();
 	}
+	
+$(document).ready(function() {
+	$("#uploadPhoto").hide();
+})
