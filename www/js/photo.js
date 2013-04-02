@@ -82,7 +82,7 @@
         	options.params = params;
 
 	        var ft = new FileTransfer();
-    	    ft.upload(image, encodeURI("http://fotoupload.planet13.at"), success, fail, options);
+    	    ft.upload(image, encodeURI("http://fotoupload.planet13.at/app"), success, fail, options);
     	    
     	}
     	    
