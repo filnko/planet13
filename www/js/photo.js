@@ -70,6 +70,9 @@
 			$("#photoButtons").fadeOut();
     
 			var options = new FileUploadOptions();
+				options.fileKey="file";
+				options.fileName="image.jpg";
+				options.mimeType="image/jpeg";
 				
 			var params = {};
 				params.name = name;
