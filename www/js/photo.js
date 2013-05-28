@@ -46,7 +46,7 @@ function uploadPhoto(imageURI) {
 	var title 		= $("#title").val();
     var description = $("#description").val();
     var ok 			= $("#ok").val();
-    var picturedb	= $("#picturedb").val();
+    var stufe 		= $("#stufe").val();
     
 	$("#submitButtons").fadeOut();
 
@@ -80,7 +80,7 @@ function uploadPhoto(imageURI) {
 			params.title = title;
     		params.description = description;
     		params.ok = ok;
-    		params.picturedb = picturedb;
+    		params.stufe = stufe;
     		params.source = "app";
 
     	options.params = params;
