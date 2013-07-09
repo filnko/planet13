@@ -6,8 +6,6 @@ function onDeviceReady() {
 
 function tweet() {
     
-    navigator.notification.alert("button pressed", null, "fyi"); 
-    
     var name 		= $("#tname").val();
 	var tweet 		= $("#ttweet").val();
 	var dataOk 		= true;
@@ -39,7 +37,7 @@ function tweet() {
     	$.ajax({
         	url: "http://fotoupload.planet13.at/tweet", 
             type: 'POST',
-            data: { name: name, tweet: tweet}
+            data: { name: 'name', tweet: 'tweet'}
         }).fail(function(jqXHR, textStatus, errorThrown) {
 			navigator.notification.alert("Fehler beim Senden! Error sending!", null, "Error"); 
     	}).done(function(jqXHR, textStatus, errorThrown) {
