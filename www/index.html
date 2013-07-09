@@ -170,6 +170,35 @@
         	</div>
         </div>
         
+        <div data-role="page" id="tweet">
+            <div data-theme="a" data-role="header">
+                <h3>Nachricht abschicken</h3>
+            </div>
+            <div data-role="content">
+            
+            	Hier kannst du eine Kleinanzeige abschicken!<br/>
+            	Here you can post an ad!
+            
+				<input type="text" name="name" id="name" placeholder="dein Name | your name" value="">
+				<input type="text" name="tweet" id="tweet" placeholder="Nachricht | message" value="">
+    			
+    			<div id="submitButtons">
+    			 	<button id="tweet" onclick="tweet();" data-theme="c" data-icon="check">schicken | send</button>
+            	</div>
+            </div>
+            
+        	<div data-role="footer" data-position="fixed">
+        		<div data-role="navbar">
+        			<ul>
+						<li><a href="#news-all" data-theme="a" data-icon="info"> News </a></li>
+						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
+						<!--<li><a href="#essen" data-theme="a" data-icon="info"> Essen </a></li>-->
+						<!--<li><a href="#page14" data-theme="a" data-icon="gear"> # </a></li>-->
+					</ul>
+				</div>
+        	</div>
+        </div>
+        
     	<div data-role="page" id="news-single">
             <div data-theme="a" data-role="header">
             	<a href="#news-all" data-icon="arrow-l">zurück</a>
