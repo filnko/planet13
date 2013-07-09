@@ -17,17 +17,17 @@ $(document).ready(function() {
 			navigator.notification.alert("Name fehlt! Name is missing!", null, "Error"); 
    		}
     
-    	if (name.length>100){
+    	if (name.length>100 && dataOk){
     		dataOk = false;
 			navigator.notification.alert("Name > 100!", null, "Error"); 
     	}
     
-    	if (tweet.length<2){
+    	if (tweet.length<2 && dataOk){
     		dataOk = false;
 			navigator.notification.alert("Nachricht fehlt! Message is missing!", null, "Error"); 
     	}
     
-    	if (tweet.length>320){
+    	if (tweet.length>320 && dataOk){
     		dataOk = false;
 			navigator.notification.alert("Nachricht zu lang! Message too long!", null, "Error"); 
     	}
@@ -39,16 +39,13 @@ $(document).ready(function() {
         	    type: 'POST',
         	    data: { name: name, tweet: tweet}
         	}).fail(function(jqXHR, textStatus, errorThrown) {
-        		console.log("textStatus = " + textStatus);
 				navigator.notification.alert("Fehler beim Senden! Error sending!", null, "Error"); 
     		}).done(function(data, textStatus, jqXHR) {
 				if(textStatus=="success"){
-        			console.log("textStatus = " + textStatus);
-					navigator.notification.alert("Erfolgreich gesendet! Successfully sent!", null, "Yeah!");
 					$("#tname").val("");
 					$("#ttweet").val(""); 
+					navigator.notification.alert("Erfolgreich gesendet! Successfully sent!", null, "Yeah!");
 				} else {
-        			console.log("textStatus = " + textStatus);
 					navigator.notification.alert("Fehler beim Senden! Error sending!", null, "Error"); 
 				}
         	}).always(function(textStatus) {
