@@ -39,13 +39,17 @@ function tweet() {
             type: 'POST',
             data: { name: 'name', tweet: 'tweet'}
         }).fail(function(jqXHR, textStatus, errorThrown) {
+        	console.log("textStatus = " + textStatus)
 			navigator.notification.alert("Fehler beim Senden! Error sending!", null, "Error"); 
-    	}).done(function(jqXHR, textStatus, errorThrown) {
+    	}).done(function(data, textStatus, jqXHR) {
 			if(testStatus=="success"){
 				navigator.notification.alert("Erfolgreich gesendet! Successfully sent!", null, "Yeah!"); 
 			} else {
 				navigator.notification.alert("Fehler beim Senden! Error sending!", null, "Error"); 
 			}
+        	console.log("textStatus = " + textStatus)
+        }).always(function(textStatus) {
+        	console.log("textStatus = " + textStatus);
         });
 	    
 	}
