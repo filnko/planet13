@@ -49,7 +49,7 @@ $(document).ready(function() {
 					navigator.notification.alert("Fehler beim Senden! Error sending!", null, "Error"); 
 				}
         	}).always(function(textStatus) {
-        		console.log("textStatus = " + textStatus);
+        		console.log("tweet status = " + textStatus);
         	});
 
 		}
