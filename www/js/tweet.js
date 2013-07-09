@@ -5,10 +5,8 @@ function onDeviceReady() {
 }
 
 function tweet() {
-
-	navigator.notification.alert("button pressed! starting!", null, "fyi"); 
     	
-    var name 		= $("#name").val();
+    var name 		= $("#tname").val();
 	var tweet 		= $("#tweet").val();
 	var dataOk 		= true;
 
