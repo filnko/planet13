@@ -6,26 +6,26 @@ function onDeviceReady() {
 
 function tweet() {
     	
-    var name 		= $("#tname").val();
-	var tweet 		= $("#tweet").val();
+    var name 		= $("#t_name").val();
+	var tweet 		= $("#t_tweet").val();
 	var dataOk 		= true;
 
-    if (name.length<2 && dataOk){
+    if (name.length<2){
     	dataOk = false;
 		navigator.notification.alert("Name fehlt! Name is missing!", null, "Error"); 
     }
     
-    if (name.length>100 && dataOk){
+    if (name.length>100){
     	dataOk = false;
 		navigator.notification.alert("Name > 100!", null, "Error"); 
     }
     
-    if (tweet.length<2 && dataOk){
+    if (tweet.length<2){
     	dataOk = false;
 		navigator.notification.alert("Nachricht fehlt! Message is missing!", null, "Error"); 
     }
     
-    if (tweet.length>320 && dataOk){
+    if (tweet.length>320){
     	dataOk = false;
 		navigator.notification.alert("Nachricht zu lang! Message too long!", null, "Error"); 
     }
