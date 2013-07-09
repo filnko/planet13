@@ -4,8 +4,8 @@ function onDeviceReady() {
 	// do something? nope!
 }
 
-function tweet() {
-    
+function doTweet() {
+    //alert("clcik!");
     var name 		= $("#tname").val();
 	var tweet 		= $("#ttweet").val();
 	var dataOk 		= true;
@@ -33,7 +33,7 @@ function tweet() {
     if (dataOk){
     
         navigator.notification.alert("data ok", null, "fyi"); 
-    	
+    	$().ready(function() {
     	$.ajax({
         	url: "http://fotoupload.planet13.at/tweet", 
             type: 'POST',
@@ -51,7 +51,8 @@ function tweet() {
         }).always(function(textStatus) {
         	console.log("textStatus = " + textStatus);
         });
-	    
+
 	}
+	)
 	    
-}
+}}
