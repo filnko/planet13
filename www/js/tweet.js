@@ -5,9 +5,11 @@ function onDeviceReady() {
 }
 
 function tweet() {
-    	
-    var name 		= $("#t_name").val();
-	var tweet 		= $("#t_tweet").val();
+    
+    navigator.notification.alert("button pressed", null, "fyi"); 
+    
+    var name 		= $("#tname").val();
+	var tweet 		= $("#ttweet").val();
 	var dataOk 		= true;
 
     if (name.length<2){
@@ -32,7 +34,7 @@ function tweet() {
 
     if (dataOk){
     
-		$("#submitButtons").fadeOut();
+        navigator.notification.alert("data ok", null, "fyi"); 
     	
     	$.ajax({
         	url: "http://fotoupload.planet13.at/tweet", 
@@ -47,8 +49,6 @@ function tweet() {
 				navigator.notification.alert("Fehler beim Senden! Error sending!", null, "Error"); 
 			}
         });
-        
-        $("#submitButtons").fadeIn();
 	    
 	}
 	    
