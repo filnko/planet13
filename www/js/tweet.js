@@ -39,11 +39,16 @@ $(document).ready(function() {
         	    type: 'POST',
         	    data: { name: name, tweet: tweet}
         	}).fail(function(jqXHR, textStatus, errorThrown) {
+        		console.log("textStatus = " + textStatus);
 				navigator.notification.alert("Fehler beim Senden! Error sending!", null, "Error"); 
     		}).done(function(data, textStatus, jqXHR) {
 				if(textStatus=="success"){
-					navigator.notification.alert("Erfolgreich gesendet! Successfully sent!", null, "Yeah!"); 
+        			console.log("textStatus = " + textStatus);
+					navigator.notification.alert("Erfolgreich gesendet! Successfully sent!", null, "Yeah!");
+					$("#tname").val("");
+					$("#ttweet").val(""); 
 				} else {
+        			console.log("textStatus = " + textStatus);
 					navigator.notification.alert("Fehler beim Senden! Error sending!", null, "Error"); 
 				}
         	}).always(function(textStatus) {
