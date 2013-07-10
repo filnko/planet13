@@ -74,9 +74,6 @@ function removeSizes() {
 		
 		if (imgsize > contentWidth){
 			var factor = contentWidth/imgsize;
-			alert("bild zu groß!");
-			//console.log("i "+imgsize);
-			//console.log("faktor: "+(contentWidth/imgsize));
 			$(this).attr("width", $(this).attr("width")*factor);
 			$(this).attr("height", $(this).attr("height")*factor);
 		}
