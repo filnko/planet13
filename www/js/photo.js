@@ -22,13 +22,13 @@ function onPhotoURISuccess(imageURI) {
 
 function capturePhoto() {
   	// Take picture using device camera 
-  	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100,
+  	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80,
     destinationType: Camera.DestinationType.FILE_URI });
 }
 
 function getPhoto() {
   	// Retrieve image file location from photo library
-  	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100, 
+  	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 80, 
     destinationType: Camera.DestinationType.FILE_URI,
     sourceType: Camera.PictureSourceType.PHOTOLIBRARY });
 }
