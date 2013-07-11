@@ -1,12 +1,6 @@
 
 var image;
 
-document.addEventListener("deviceready",onDeviceReady,false);
-
-function onDeviceReady() {
-	// do something?
-}
-
 function onPhotoURISuccess(imageURI) {
 	image = imageURI;
 

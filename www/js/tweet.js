@@ -1,8 +1,3 @@
-document.addEventListener("deviceready",onDeviceReady,false);
-
-function onDeviceReady() {
-	// do something? nope!
-}
 
 $(document).ready(function() {
 
