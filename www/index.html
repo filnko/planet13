@@ -4,8 +4,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
-        
+
         <link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.3.1.min.css" />
+        <link rel="stylesheet" type="text/css" href="css/planet13.css" />
         
         <script type="text/javascript" src="phonegap.js"></script>
         
@@ -23,7 +24,7 @@
     <!-- Start -->
     
     	<div data-role="page" id="start">
-            <div data-theme="a" data-role="header">
+            <div data-role="header">
                 <h2>PLANET'13</h2>
             </div>
             <div data-role="content">
@@ -33,10 +34,10 @@
         	<div data-role="footer" data-position="fixed">
         		<div data-role="navbar">
         			<ul>
-						<li><a href="#news-all" data-theme="a" data-icon="bars"> News </a></li>
-						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
-						<li><a href="#tweet" data-theme="a" data-icon="edit"> Message </a></li>
-						<li><a href="#info" data-theme="a" data-icon="info"> Info </a></li>
+						<li><a href="#news-all" data-icon="bars"> News </a></li>
+						<li><a href="#photo" data-icon="grid"> Photo </a></li>
+						<li><a href="#tweet" data-icon="edit"> Message </a></li>
+						<li><a href="#info" data-icon="info"> Info </a></li>
 					</ul>
 				</div>
         	</div>
@@ -45,7 +46,7 @@
     <!-- Kochbuch -->
         
         <div data-role="page" id="essen">
-            <div data-theme="a" data-role="header">
+            <div data-role="header">
                 <h3>Kochbuch</h3>
             </div>
             <div data-role="content">
@@ -67,10 +68,10 @@
         	<div data-role="footer" data-position="fixed">
         		<div data-role="navbar">
         			<ul>
-						<li><a href="#news-all" data-theme="a" data-icon="bars"> News </a></li>
-						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
-						<li><a href="#tweet" data-theme="a" data-icon="edit"> Message </a></li>
-						<li><a href="#info" data-theme="a" data-icon="info"> Info </a></li>
+						<li><a href="#news-all" data-icon="bars"> News </a></li>
+						<li><a href="#photo" data-icon="grid"> Photo </a></li>
+						<li><a href="#tweet" data-icon="edit"> Message </a></li>
+						<li><a href="#info" data-icon="info"> Info </a></li>
 					</ul>
 				</div>
         	</div>
@@ -79,7 +80,7 @@
     <!-- News -->
         
         <div data-role="page" id="news-all">
-            <div data-theme="a" data-role="header">
+            <div data-role="header">
                 <h3>News</h3>
             </div>
             <div data-role="content">
@@ -89,10 +90,10 @@
         	<div data-role="footer" data-position="fixed">
         		<div data-role="navbar">
         			<ul>
-						<li><a href="#news-all" data-theme="a" data-icon="bars"> News </a></li>
-						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
-						<li><a href="#tweet" data-theme="a" data-icon="edit"> Message </a></li>
-						<li><a href="#info" data-theme="a" data-icon="info"> Info </a></li>
+						<li><a href="#news-all" data-icon="bars"> News </a></li>
+						<li><a href="#photo" data-icon="grid"> Photo </a></li>
+						<li><a href="#tweet" data-icon="edit"> Message </a></li>
+						<li><a href="#info" data-icon="info"> Info </a></li>
 					</ul>
 				</div>
         	</div>
@@ -101,10 +102,10 @@
 	<!-- Photo -->
         
         <div data-role="page" id="photo">
-            <div data-theme="a" data-role="header">
+            <div data-role="header">
                 <h3>Foto hochladen</h3>
             </div>
-            <div data-role="content">
+            <div data-role="content" data-theme="a">
             
             	Hier kannst du dein Foto vom PLANET'13 hochladen!<br/>
             	You can upload your photo from PLANET'13 here!
@@ -142,17 +143,17 @@
     			<img id="showPhoto" src="" />
     			
     			<div id="submitButtons">
-    			 	<button id="uploadPhoto" onclick="uploadPhoto();" data-theme="c" data-icon="check">hochladen | upload</button>
+    			 	<button id="uploadPhoto" onclick="uploadPhoto();" data-icon="check">hochladen | upload</button>
             	</div>
             </div>
             
         	<div data-role="footer" data-position="fixed">
         		<div data-role="navbar">
         			<ul>
-						<li><a href="#news-all" data-theme="a" data-icon="bars"> News </a></li>
-						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
-						<li><a href="#tweet" data-theme="a" data-icon="edit"> Message </a></li>
-						<li><a href="#info" data-theme="a" data-icon="info"> Info </a></li>
+						<li><a href="#news-all" data-icon="bars"> News </a></li>
+						<li><a href="#photo" data-icon="grid"> Photo </a></li>
+						<li><a href="#tweet" data-icon="edit"> Message </a></li>
+						<li><a href="#info" data-icon="info"> Info </a></li>
 					</ul>
 				</div>
         	</div>
@@ -161,10 +162,10 @@
     <!-- Tweets -->
         
         <div data-role="page" id="tweet">
-            <div data-theme="a" data-role="header">
+            <div data-role="header">
                 <h3>Sternschnuppen</h3>
             </div>
-            <div data-role="content">
+            <div data-role="content" data-theme="a">
             
             	Schreib eine Message für den planetSTAR an deine Freunde!<br/></br>
             	<em>Sternschnuppe</em> message to a friend!
@@ -172,17 +173,17 @@
 				<input type="text" name="tname" id="tname" placeholder="dein Name | your name" value="">
 				<textarea name="ttweet" id="ttweet" placeholder="Nachricht | message"></textarea>
 
-            	<button id="sendTweet" data-theme="c" data-icon="check">abschicken | send</button>
+            	<button id="sendTweet" data-icon="check">abschicken | send</button>
             	
             </div>
             
         	<div data-role="footer" data-position="fixed">
         		<div data-role="navbar">
         			<ul>
-						<li><a href="#news-all" data-theme="a" data-icon="bars"> News </a></li>
-						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
-						<li><a href="#tweet" data-theme="a" data-icon="edit"> Message </a></li>
-						<li><a href="#info" data-theme="a" data-icon="info"> Info </a></li>
+						<li><a href="#news-all" data-icon="bars"> News </a></li>
+						<li><a href="#photo" data-icon="grid"> Photo </a></li>
+						<li><a href="#tweet" data-icon="edit"> Message </a></li>
+						<li><a href="#info" data-icon="info"> Info </a></li>
 					</ul>
 				</div>
         	</div>
@@ -191,15 +192,25 @@
     <!-- Infos -->
         
         <div data-role="page" id="info">
-            <div data-theme="a" data-role="header">
+            <div data-role="header">
                 <h3>Infos</h3>
             </div>
-            <div data-role="content">
+            <div data-role="content" data-theme="a">
+            
+            Wir haben hier für dich die wichtigsten Punkte aus dem Lagerhandbuch gesammelt.
             
             	<ul data-role="listview" data-inset="true">
+    				
+    				<li data-role="list-divider">Allgemeines</li>
     				<li><a href="PAGES/song.html" data-ajax="false">Camp song</a></li>
     				<li><a href="PAGES/gastro.html" data-ajax="false">Gastronomie</a></li>
     				<li><a href="PAGES/abc.html" data-ajax="false">Lager ABC</a></li>
+    				
+    				<li data-role="list-divider">Zeitpläne</li>
+    				<li data-theme="b"><a href="PAGES/zeit_gusp.html" data-ajax="false">GuSp</a></li>
+    				<li data-theme="c"><a href="PAGES/zeit_caex.html" data-ajax="false">CaEx</a></li>
+    				<li data-theme="d"><a href="PAGES/zeit_raro.html" data-ajax="false">RaRo</a></li>
+    				
 				</ul>
             	
             </div>
@@ -207,10 +218,10 @@
         	<div data-role="footer" data-position="fixed">
         		<div data-role="navbar">
         			<ul>
-						<li><a href="#news-all" data-theme="a" data-icon="bars"> News </a></li>
-						<li><a href="#photo" data-theme="a" data-icon="grid"> Photo </a></li>
-						<li><a href="#tweet" data-theme="a" data-icon="edit"> Message </a></li>
-						<li><a href="#info" data-theme="a" data-icon="info"> Info </a></li>
+						<li><a href="#news-all" data-icon="bars"> News </a></li>
+						<li><a href="#photo" data-icon="grid"> Photo </a></li>
+						<li><a href="#tweet" data-icon="edit"> Message </a></li>
+						<li><a href="#info" data-icon="info"> Info </a></li>
 					</ul>
 				</div>
         	</div>
@@ -219,7 +230,7 @@
     <!-- Single News -->
         
     	<div data-role="page" id="news-single">
-            <div data-theme="a" data-role="header">
+            <div data-role="header">
             	<a href="#news-all" data-icon="arrow-l">zur&uuml;ck</a>
                 <h3 id="newsheadline">PLANET'13</h3>
             </div>

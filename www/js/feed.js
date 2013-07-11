@@ -1,4 +1,5 @@
-var RSS = "http://feeds.feedburner.com/planet13at";
+var RSS   = "http://feeds.feedburner.com/planet13at";
+var RSSen = "http://feeds.feedburner.com/planet13en";
 var entries = [];
 var selectedEntry = "";
 
@@ -26,7 +27,7 @@ $(document).ready(function() {
 			var s = '';
 	
 			$.each(entries, function(i, v) {
-				s += '<li><a href="#news-single" class="news-single" onclick="loadPage('+i+')">' + 
+				s += '<li data-theme="a"><a href="#news-single" class="news-single" onclick="loadPage('+i+')">' + 
 						'<h3>'+v.title + '</h3>'+
 						'<p>'+v.description+'</p></a></li>';
 			});
