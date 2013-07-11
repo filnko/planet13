@@ -29,7 +29,7 @@ function capturePhoto() {
 function getPhoto() {
   	// Retrieve image file location from photo library
   	navigator.camera.getPicture(onPhotoURISuccess, onFail, { quality: 100, 
-    destinationType: Camera.DestinationType.FILE_URI
+    destinationType: Camera.DestinationType.FILE_URI,
     sourceType: Camera.PictureSourceType.PHOTOLIBRARY });
 }
 
