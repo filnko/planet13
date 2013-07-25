@@ -65,7 +65,14 @@ function removeSizes() {
 	$("iframe").removeAttr("width");
 	$("iframe").removeAttr("height");
 	
-	$("a").attr("target","_system");
+	$("a").each(function() {
+	
+		(this).attr("target","_system");
+		
+		navigator.notification.alert("added!", null, (this).html()); 
+		
+	});
+	
 	
 	// alter image sizes
 	var contentWidth = $('[data-role="page"]').first().width()-30;
