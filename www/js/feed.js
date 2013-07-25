@@ -48,7 +48,7 @@ $(document).ready(function() {
 		$("#newsheadline", this).text(entries[selectedEntry].title);
 		var contentHTML = "";
 		contentHTML += entries[selectedEntry].content;
-		contentHTML += '<a href="#" onclick="var ref = window.open(\'http://google.com\', \'_system\');">Auf der Homepage lesen</a>';
+		contentHTML += '<a href="#" onclick="var ref = window.open(\''+entries[selectedEntry].link + '\'", \'_system\');">Auf der Homepage lesen</a>';
 		//contentHTML += '<a href="'+entries[selectedEntry].link + '">Auf der Homepage lesen</a>';
 		$("#newscontent",this).html(contentHTML);
 		removeSizes();
