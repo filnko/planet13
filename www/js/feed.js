@@ -68,8 +68,7 @@ function removeSizes() {
 	$("a").each(function() {
 	
 		(this).attr("target","_system");
-		
-		navigator.notification.alert("added!", null, (this).html()); 
+		navigator.notification.alert("added!", null, "sdsdsds"); 
 		
 	});
 	
