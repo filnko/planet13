@@ -72,8 +72,9 @@
     <gap:splash src="res/screen/ios/screen-iphone-portrait-2x.png" gap:platform="ios"     width="640" height="960" />
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg" gap:platform="winphone" />
 
-    <!--<access origin=""/> -->
+    <!--<access origin=""/> 
     <access origin="fotoupload.planet13.at" />
-    <access origin="feedburner.com" />
+    <access origin="feedburner.com" />-->
+    <access origin="*" />
 
 </widget>
