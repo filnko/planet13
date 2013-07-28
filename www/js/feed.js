@@ -48,8 +48,7 @@ $(document).ready(function() {
 		$("#newsheadline", this).text(entries[selectedEntry].title);
 		var contentHTML = "";
 		contentHTML += entries[selectedEntry].content;
-		contentHTML += '<a href="#" onclick="window.open("http://orf.at", "_blank", "location=no");">Auf der Homepage lesen</a>';
-		//contentHTML += '<a href="'+entries[selectedEntry].link + '">Auf der Homepage lesen</a>';
+		contentHTML += '<a href="'+entries[selectedEntry].link + '">Auf der Homepage lesen</a>';
 		$("#newscontent",this).html(contentHTML);
 		removeSizes();
 	});
