@@ -48,7 +48,7 @@ $(document).ready(function() {
 		$("#newsheadline", this).text(entries[selectedEntry].title);
 		var contentHTML = "";
 		contentHTML += entries[selectedEntry].content;
-		contentHTML += '<a href="#" onclick="var ref = window.open(http://orf.at, _system);">Auf der Homepage lesen</a>';
+		contentHTML += '<a href="#" onclick="var ref = window.open(\''+ entries[selectedEntry].link + '\', \'_system\');">Auf der Homepage lesen</a>';
 		//contentHTML += '<a href="'+entries[selectedEntry].link + '">Auf der Homepage lesen</a>';
 		$("#newscontent",this).html(contentHTML);
 		removeSizes();
@@ -66,14 +66,13 @@ function removeSizes() {
 	$("iframe").removeAttr("width");
 	$("iframe").removeAttr("height");
 	
-	/*
 	$("a").each(function() {
 	
 		(this).attr("target","_system");
 		navigator.notification.alert("added!", null, "sdsdsds"); 
 		
 	});
-	*/
+	
 	
 	// alter image sizes
 	var contentWidth = $('[data-role="page"]').first().width()-30;
